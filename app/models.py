@@ -3,8 +3,8 @@
 #pero con tipos traducidos a SQl y mysql
 from app import db
 
-class Medico(db.modelo):
-    id = db.Column(db.Integer, primry_key = True )
+class Medico(db.Model):
+    id = db.Column(db.Integer, primary_key = True )
     nombre = db.Column(db.String(120), nullable = True)
     apellido = db.Column(db.String(120), nullable = True)
     tipo_identificacion = db.Column(db.String(4), nullable = True)

@@ -18,5 +18,5 @@ db = SQLAlchemy(app)
 migrate = Migrate(app , db)
 
 #importar los modelos
-from .models import Medicos 
+from .models import Medico
 
