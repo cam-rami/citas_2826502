@@ -36,7 +36,7 @@ class Consultorio(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     numero = db.Column(db.Integer)
     
-    citas = db.relationship("Cita", backref = "cinsultorio" )
+    citas = db.relationship("Cita", backref = "consultorio" )
     
 class Cita(db.Model):
     
