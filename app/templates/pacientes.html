@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Pacientes</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <h1>Lista de Pacientes</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellidos</th>
+                    <th>tipo_identificacion</th>
+                    <th>numero_identificacion</th>
+                    <th>altura</th>
+                    <th>tipo_sangre</th>
+                </tr>
+            </tehead>
+            <tbody>
+                {%for paciente in pacientes %}
+                   <tr>
+                    <td>{{ paciente.nombre }}</td>
+                    <td>{{ paciente.apellidos }}</td>
+                    <td>{{ paciente.tipo_identificacion }}</td>
+                    <td>{{ paciente.numero_identificacion }}</td>
+                    <td>{{ paciente.altura }}</td>
+                    <td>{{ paciente.tipo_sangre }}</td>
+                   </tr> 
+                {%endfor%}
+            </tbody>
+            <tfoot></tfoot>
+        </table>
+        <script src="" async defer></script>
+    </body>
+    
+</html>
