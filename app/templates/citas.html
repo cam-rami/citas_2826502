@@ -3,39 +3,31 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Medicos</title>
+        <title>Citas</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> 
     </head>
     <body>
-        <h1>Lista de Medicos</h1>
+        <h1>Lista de Citas</h1>
         <table class="table table-success table-striped">
             <thead>
                 <tr>
-                    <th>Nombre</th>
-                    <th>Apellidos</th>
-                    <th>tipo_identificacion</th>
-                    <th>numero_identificacion</th>
-                    <th>registro_medico</th>
-                    <th>especialidad</th>
-                    <th>ver detalles</th>
+                    <th>Fecha</th>
+                    <th>paciente</th>
+                    <th>medico</th>
+                    <th>consultorio</th>
+                    <th>valor</th>
                 </tr>
             </tehead>
             <tbody>
-                {%for medico in medicos %}
+                {%for cita in citas %}
                    <tr>
-                    <td>{{ medico.nombre }}</td>
-                    <td>{{ medico.apellidos }}</td>
-                    <td>{{ medico.tipo_identificacion }}</td>
-                    <td>{{ medico.numero_identificacion }}</td>
-                    <td>{{ medico.registro_medico }}</td>
-                    <td>{{ medico.especialidad }}</td>
-                    <td>
-                        <a href="/medicos/{{ medico.id }}">
-                           ver detalles
-                        </a>
-                    </td>
+                    <td>{{ cita.fecha }}</td>
+                    <td>{{ cita.paciente.nombre }}</td>
+                    <td>{{ cita.medico.nombre }}</td>
+                    <td>{{ cita.consultorio.id }}</td>
+                    <td>{{ cita.valor }}</td>
                    </tr> 
                 {%endfor%}
             </tbody>
@@ -43,3 +35,5 @@
         </table>
         <script src="" async defer></script>
     </body>
+    
+</html>
