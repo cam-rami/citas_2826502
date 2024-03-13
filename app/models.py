@@ -93,3 +93,5 @@ class Cita(db.Model):
 >>> db.session.commit() 
 
 """
+"""<input type="submit">
+</input>"""
