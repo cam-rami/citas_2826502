@@ -83,7 +83,17 @@ def create_paciente():
     #mostrar el formulario: metodo GET 
     if( request.method == "GET"  ):
         #el usuario ingreso con navegador con http://localhost:5000/medico
-        return render_template("paciente_form.html")
+        tipo_sangre =[
+            "A+",
+            "A-",
+            "B+",
+            "B-",
+            "O-",
+            "O+",
+            "AB+",
+            "AB-"
+        ]
+        return render_template("paciente_form.html", tipo_sangre = tipo_sangre)
   
     #####
     ## Cuando el usuario presione el boton guardar
@@ -126,7 +136,16 @@ def create_cita():
     #mostrar el formulario: metodo GET 
     if( request.method == "GET"  ):
         #el usuario ingreso con navegador con http://localhost:5000/medico
-        return render_template("cita_form.html")
+        medico =["luisa",
+                 "cris",
+                 "felipe",
+                 "camila",
+                 "sebastian",
+                 ""]
+        Consultorio =["106",
+                      "208",
+                      "212"]
+        return render_template("cita_form.html",  medico = medico, Consultorio = Consultorio)
   
     #####
     ## Cuando el usuario presione el boton guardar
@@ -175,4 +194,60 @@ def delete_medico(id):
     db.session.delete(medico_delete)
     db.session.commit()
     return redirect("/medicos")    
+    
+@app.route("/pacientes/update/<int:id>" , methods=["POST" , "GET"])
+def update_paciente(id):
+    tipo_sangre =[
+            "A+",
+            "A-",
+            "B+",
+            "B-",
+            "O-",
+            "O+",
+            "AB+",
+            "AB-"
+        ]  
+    Paciente_update = Paciente.query.get(id)
+    if(request.method == "GET"):
+        return render_template("paciente_update.html",
+                           paciente_update = Paciente_update,
+                           tipo_sangre = tipo_sangre)
+    elif(request.method == "POST"):
+        Paciente_update.nombre = request.form["nombre"]
+        Paciente_update.apellidos = request.form["apellidos"]
+        Paciente_update.tipo_identificacion = request.form["ti"]
+        Paciente_update.numero_identificacion = request.form["ni"]
+        Paciente_update.altura = request.form["al"]
+        Paciente_update.tipo_sangre = request.form["ts"]
+        db.session.commit()
+        return Paciente_update.nombre
+    
+@app.route("/pacientes/delete/<int:id>")
+def delete_paciente(id):
+    paciente_delete = Paciente.query.get(id)
+    db.session.delete(paciente_delete)
+    db.session.commit()
+    return redirect("/pacientes") 
+    
+@app.route("/consultorios/update/<int:id>" , methods=["POST" , "GET"])
+def update_consultorio(id):
+ 
+    consultorio_update = Consultorio.query.get(id)
+    if(request.method == "GET"):
+        return render_template("consultorio_update.html",
+                           consultorio_update = consultorio_update,)
+    elif(request.method == "POST"):
+        consultorio_update.numero = request.form["nu"]
+        db.session.commit()
+        return consultorio_update.nombre
+    
+    
+@app.route("/consultorios/delete/<int:id>")
+def delete_consultorio(id):
+    consultorio_delete = Consultorio.query.get(id)
+    db.session.delete(consultorio_delete)
+    db.session.commit()
+    return redirect("/consultorios")  
+
+    
     

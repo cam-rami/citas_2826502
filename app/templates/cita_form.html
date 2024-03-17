@@ -15,12 +15,7 @@
         <h1> nuevo cita</h1>
         <form method="post">
             <p>Fecha: <input type="date" name="Fecha" /> </p>
-            <p>Paciente: 
-                <select name="pac">
-                    {% for paciente in paciente %}
-                        <option value="">{{paciente.nombre}} </option>
-                    {% endfor%}
-                </select> </p>
+            <p>Paciente:<input type="text" name="Paciente" /> </p>
             <p>Medico:
                 <select name="med">
                     {% for medico in medico %}
