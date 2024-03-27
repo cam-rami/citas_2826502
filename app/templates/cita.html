@@ -7,9 +7,17 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Detalle de consultorio</h1>
+    <h1>Detalle de cita</h1>
     <ul>
-        <li>Consultorio: {{ con.numero }}</li>
+        <li>Fecha: {{ cit.fecha }}</li>
+
+        <li>Paciente: {{ cit.paciente_id }}</li>
+
+        <li>Medico: {{ cit.medico_id }}</li>
+
+        <li>Consultorio: {{ cit.consultorio_id }}</li>
+
+        <li>Valor: {{ cit.valor }}</li>
     </ul>
 </body>
 </html>

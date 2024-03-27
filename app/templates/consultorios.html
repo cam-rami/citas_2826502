@@ -10,7 +10,7 @@
     </head>
     <body>
         <h1>Lista de Consultorios</h1>
-        <table class="table table-success table-striped">
+        <table class="table table-dark">
             <thead>
                 <tr>
                     <th>Numero</th>
@@ -40,6 +40,13 @@
                     </td>
                    </tr> 
                 {%endfor%}
+                <tr>
+                    <td class="con_tabla" colspan="9">
+                        <a href="{{ url_for('create_consultorio') }}" class="link"><!--VINCULAR MEDIANTE URL SIN ROUTE-->
+                            Crear Nuevo
+                        </a>
+                    </td>
+                </tr>
             </tbody>
             <tfoot></tfoot>
         </table>
