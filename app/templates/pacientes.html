@@ -6,54 +6,53 @@
         <title>Pacientes</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link href="{{url_for('static',filename='/style_table.css')}}" rel="stylesheet" >
     </head>
     <body>
-        <h1>Lista de Pacientes</h1>
-        {% with messages = get_flashed_messages() %}
-             {% if messages %}
-                <ul class=flashes>
-                {% for message in messages %}
-                    <li>{{ message }}</li>
-                {% endfor %}
-            </ul>
-             {% endif %}
-        {% endwith %}
-        <table class="table table-dark">
+        <div class="contorno_pacientes">
+            <div class="titulo">
+        <h1 class="">Lista de Pacientes</h1>
+            </div>
+            <div class="contenido">
+                <table class="table">
+
             <thead>
                 <tr>
-                    <th>Nombre</th>
-                    <th>Apellidos</th>
-                    <th>tipo_identificacion</th>
-                    <th>numero_identificacion</th>
-                    <th>altura</th>
-                    <th>tipo_sangre</th>
-                    <th>ver detalles</th>
-                    <th>Actualizar</th>
-                    <th>Eliminar</th>
+                    <th class="encabezado">Nombre</th>
+                    <th class="encabezado">Apellidos</th>
+                    <th class="encabezado">tipo identificacion</th>
+                    <th class="encabezado">numero identificacion</th>
+                    <th class="encabezado">altura</th>
+                    <th class="encabezado">tipo sangre</th>
+                    <th class="encabezado">ver detalles</th>
+                    <th class="encabezado">Actualizar</th>
+                    <th class="encabezado">Eliminar</th>
                 </tr>
             </tehead>
             <tbody>
                 {%for paciente in pacientes %}
                    <tr>
-                    <td>{{ paciente.nombre }}</td>
-                    <td>{{ paciente.apellidos }}</td>
-                    <td>{{ paciente.tipo_identificacion }}</td>
-                    <td>{{ paciente.numero_identificacion }}</td>
-                    <td>{{ paciente.altura }}</td>
-                    <td>{{ paciente.tipo_sangre }}</td>
-                    <td>
+                    <td class="con_tabla">{{ paciente.nombre }}</td>
+                    <td class="con_tabla">{{ paciente.apellidos }}</td>
+                    <td class="con_tabla">{{ paciente.tipo_identificacion }}</td>
+                    <td class="con_tabla">{{ paciente.numero_identificacion }}</td>
+                    <td class="con_tabla">{{ paciente.altura }}</td>
+                    <td class="con_tabla">{{ paciente.tipo_sangre }}</td>
+                    <td class="con_tabla">
                         <a href="/pacientes/{{ paciente.id }}">
+                            <img src="{{url_for('static',filename='detalles.png')}} "alt=""  width="25px" height="25px" class="detalles">
                            ver detalles
                         </a>
                     </td>
-                    <td>
+                    <td class="con_tabla">
                         <a href="/pacientes/update/{{ paciente.id }}">
+                            <img src="{{url_for('static',filename='actualizar.png')}} "alt=""  width="25px" height="25px" class="actializar">
                            Actualizar
                         </a>
                     </td>
-                    <td>
+                    <td class="con_tabla">
                         <a href="/pacientes/delete/{{ paciente.id }}">
+                            <img src="{{url_for('static',filename='basura.png')}} "alt=""  width="25px" height="25px" class="basura">
                            Eliminar
                         </a>
                     </td>
@@ -69,7 +68,8 @@
             </tbody>
             <tfoot></tfoot>
         </table>
-        <script src="" async defer></script>
+    </div>
+</div>
     </body>
     
 </html>

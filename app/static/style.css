@@ -1,24 +1,189 @@
-.contorno{ 
-    left: 50%;
-    right: 50%;
-    transform: translateX(-50%, -50%);
-    text-align: center;
-    border: 10px solid black;
+body{
+    background-color: azure;
+    font-family:"mallanna" sans-serif;
+    font-size: 25px;
 }
 
-.body {
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+.contorno{
+    background-color:rgb(197, 235, 254);
+    display: block;
+    top:auto; /*ajusta la posicion del ancho*/
+    left: 35%;/*ajusta la posicion de izquierda*/
+    right: 35%;
+    bottom: auto;
+    position: absolute;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 30px;
+    padding-top: 0px;
+    box-shadow: 0px 0px 8px rgba(46, 46, 46, 0.1);
 }
-#formulario{
-    display: grid;
-    width: 500px;
-    align-items: center;
+
+.titulo{
+    display: flex;
+    position: relative;
     justify-content: center;
+    border-bottom: 1.5px solid rgb(0, 0, 0, 0.1);
+    font-size: 46px;
+    padding-bottom: 18px;
+    padding-top: 0px;
+    }
+
+.custom_select{
+    position: relative;
+    border: 0px solid black;
+    }
+
+img[class="nombre"]{
+    vertical-align: -30%;
+    padding-right: 10px;
+     padding-left: 8px;
+    }
+ img[class="apellidos"]{
+    vertical-align: -30%;
+    padding-right: 10px;
+    padding-left: 8px;  
+    }
+ img[class="identificacion"]{
+    vertical-align: -34%;
+    padding-right: 10px;
+    padding-left: 8px;  
+    }
+    
+ img[class="numero"]{
+    vertical-align: -36%;
+    padding-right: 10px;
+    padding-left: 8px;  
+    }
+
+img[class="registro"]{
+    vertical-align: -30%;
+    padding-right: 10px;
+    padding-left: 8px;  
+    }
+    
+img[class="especialidad"]{
+    vertical-align: -30%;
+    padding-right: 10px;
+    padding-left: 8px;  
+    }
+
+img[class="sangre"]{
+    vertical-align: -36%;
+    padding-right: 10px;
+    padding-left: 8px;  
+    }
+    
+img[class="altura"]{
+    vertical-align: -36%;
+    padding-right: 10px;
+    padding-left: 8px;  
+    }
+
+    img[class="consultorio"]{
+        vertical-align: -36%;
+        padding-right: 10px;
+        padding-left: 8px;  
+        }
+        
+    img[class="medico"]{
+        vertical-align: -36%;
+        padding-right: 10px;
+        padding-left: 8px;  
+        }
+
+.flecha{
+    display: block;
+    background-color: rgb(228, 228, 228);
+    width: 3rem;
+    height: 40px;
+    position: absolute;
+    bottom:  1px;
+    right: 1px;
+    pointer-events: none;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border: none;
+    appearance: none;
+    box-shadow: none;
+    }
+
+select{
     border-radius: 15px;
+    background-color: rgb(240, 240, 240);
+    font-size: 20px;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    border: none;
+    appearance: none;
+    box-shadow: none;
+}
+
+input{
+    border-radius: 15px;
+    border: 0px solid black;
+    background-color: rgb(240, 240, 240);;
+    font-size: 20px;
+    width: 95.7%;
+    height: auto;
+    padding: 10px;
+}
+
+button{
+    font-family: inherit;
+    font-size: 20px;
+    background: royalblue;
+    color: white;
+    padding: 0.4em 0.8em;
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.2s;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+button span{
+    display: block;
+    margin-left: 0.3em;
+    transition: all 0.3s ease-in-out;
+}
+
+button svg{
+    display: block;
+    transform-origin: center center;
+    transition: transform 0.3s ease-in-out;
+}
+
+button:hover .svg-wrapper{
+    animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+button:hover svg{
+    transform: translateX(1.2em) rotate(45deg) scale(1.1);
+}
+
+button:hover span{
+    transform: translateX(5em);
+}
+
+button:active{
+    transform: scale(0.95);
 }
 
 
-
+.contorno_form{
+    background-color:rgb(197, 235, 254);
+    display: inline-block;
+    top: auto;/*AJUSTA EL POSICIONAMINETO SEGUN EL TECHO*/
+    left: 35%;/*AJUSTA EL POSICIONAMINETO SEGUN IZQUIERDA*/
+    right: 35%;/*AJUSTA EL POSICIONAMINETO SEGUN DRECHA*/
+    bottom: auto;
+    position: fixed;
+    border-radius: 10px;
+    padding: 30px;
+    padding-top: 0px;
+    box-shadow: 0px 0px 8px rgba(46, 46, 46, 0.1);
+}

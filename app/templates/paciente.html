@@ -6,17 +6,43 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link href="{{url_for('static',filename='/style_list.css')}}" rel="stylesheet" >
     </head>
     <body>
-        <h1>Detalle de paciente</h1>
-        <ul>
-            <li> Nombre: {{ pac.nombre}} </li>
-            <li> Apellidos: {{ pac.apellidos }} </li>
-            <li> Tipo_identificacion: {{ pac.tipo_identificacion }} </li>
-            <li> Numero_identificacion: {{ pac.numero_identificacion}} </li>
-            <li> Altura: {{ pac.altura}} </li>
-            <li> Tipo_sangre: {{ pac.tipo_sangre}} </li>
+    <div class="contorno">
+        <h1 class="titulo">Detalle de paciente</h1>
+        <ul class="item_lidta">
+            <li>
+                <img src="{{url_for('static',filename='nombre.png.png')}}" alt="" width="50px" height="50px" class="nombre">
+               <strong> Nombre:</strong> 
+                {{ pac.nombre}} 
+            </li>
+            <li>
+                <img src="{{url_for('static',filename='apellido.png.png')}}" alt="" width="50px" height="50px" class="apellido">
+                <strong> Apellidos:</strong>
+                 {{ pac.apellidos }} 
+            </li>
+            <li> 
+                <img src="{{url_for('static',filename='identificacion.png.png')}}" alt="" width="50px" height="50px" class="identificacion">
+                <strong>Tipo_identificacion:</strong>
+                 {{ pac.tipo_identificacion }} 
+            </li>
+            <li>
+                <img src="{{url_for('static',filename='numero.png.png')}}" alt="" width="50px" height="50px" class="numero">
+                <strong> Numero_identificacion:</strong>
+                 {{ pac.numero_identificacion}} 
+            </li>
+            <li>
+                <img src="{{url_for('static',filename='altura.png')}}" alt="" width="50px" height="50px" class="sangre">
+                <strong> Altura:</strong>
+                 {{ pac.altura}} 
+            </li>
+            <li>
+                <img src="{{url_for('static',filename='sangre.png')}}" alt="" width="50px" height="50px" class="altura">
+                <strong> Tipo_sangre:</strong>
+                 {{ pac.tipo_sangre}} 
+            </li>
         </ul>
+    </div>
     </body>
 </html>
